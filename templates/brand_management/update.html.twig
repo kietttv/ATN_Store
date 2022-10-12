@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div  class="container">
+<h1>Update Brand </h1>
+<br>
+<a href="{{path('app_brand_management')}}"><button type="button" class="btn btn-outline-primary">Back to index</button></a>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+</div>
+{% endblock %}

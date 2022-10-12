@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main style="min-height: calc(100vh - 116px - 56px - 246px);">
+
+    <div id="main">
+                <div class="container">
+                    <h3>Manager Product</h3> <a href="{{path('addpromanage')}}"><button type="button" class="btn btn-outline-primary">Insert</button></a>
+                </div>
+                <div class="page-content">
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+               
+                </div>
+                <div class="container mb-3">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Descript</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">BrandID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in product %}
+                                <tr>
+                                    <td>{{p.productid}}</td>
+                                    <td>{{p.Productname}}</td>
+                                    <td>{{p.Price}}</td>
+                                    <td>{{p.Productdes}}</td>
+                                    <td>{{p.Productquantity}}</td>
+                                    <td>{{p.Productimage}}</td>
+                                    <td>{{p.brandid}}</td>          
+                                    <td>
+                                        <a href="{{path('updatepromanage',{'id' : p.productid})}}" class="btn rounded-pill text-light"
+                                         style="background-color: rgba(26,148,255,255);"> Update </a>
+                                    </td>
+                                </tr>     
+                                {% endfor %}                        
+                        </tbody>
+                    </table>
+             </div>
+            </div>
+    </div>
+    </main>
+{% endblock %}

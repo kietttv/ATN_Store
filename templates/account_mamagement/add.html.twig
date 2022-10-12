@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+{% if error == 1 %}
+    <div class="alert alert-danger">Username already exists</div>
+{% endif %}
+{{ form_start(form) }}
+{{ form_row(form.username) }}
+{{ form_row(form.password.first) }}
+{{ form_row(form.password.second) }}
+{{ form_end(form) }}
+</div>
+{% endblock %}

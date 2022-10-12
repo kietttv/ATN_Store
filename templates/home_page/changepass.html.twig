@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main style="min-height: calc(100vh - 116px - 56px - 246px);">
+<div class="container">
+<br>
+{{ form_start(form) }}
+{{ form_row(form.password.first) }}
+{{ form_row(form.password.second) }}
+{{ form_end(form) }}
+</div>
+</main>
+{% endblock %}

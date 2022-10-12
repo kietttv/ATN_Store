@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main style="min-height: calc(100vh - 116px - 56px - 246px);">
+<div class="container">
+  <H2>Compare Product</H2>
+  <br>
+  <div class="row" style="background-color: aliceblue;">
+     {% for p in product %}
+        <div class="col-md-6">
+            <div class="card">
+            <br>
+              <img 
+                src="../img/{{p.Productimage}}"
+                class="card-img-top"
+                alt="Not image available" style="margin: auto;
+                width: 40%;"
+              />
+              <div class="card-body align-self-center">
+                <h4 class="card-subtitle mb-2 text-muted text-center"><span></span>{{p.Productname}}</h4>
+                <h6 class="card-subtitle mb-2 text-muted text-center"><span></span>{{p.Price}} VND</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-center"><span></span>{{p.Productdes}}</h6>
+              </div>
+            </div>
+        </div>
+      <br>
+    {% endfor %}
+  </div>  
+</div>
+<br>
+</main>
+{% endblock %}

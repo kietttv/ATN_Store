@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<main style="min-height: calc(100vh - 116px - 56px - 246px);">
+<div class="col d-flex justify-content-center text-center">
+    <div class="form-outline mb-4">
+        <div class="container">
+        <form method="post">
+        <br></br>
+        <h1 class="h3 mb-3 font-weight-normal"> L o g i n</h1>
+<div class="container"
+    {% if error %}
+        <div class="alert alert-danger"><p style= "color: red">Wrong username or password</p></div>
+    {% endif %}
+            <br>
+            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus placeholder="UserName">
+            <br>
+            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required placeholder="Password">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <br>
+            <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+        </div>
+    </div>
+</div>
+</div>
+</form>
+</main>
+{% endblock %}

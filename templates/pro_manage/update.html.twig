@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div  class="container">
+<h1> Product Manage</h1>
+<br>
+<a href="{{path('app_pro_manage')}}"><button type="button" class="btn btn-outline-primary">Back to index</button></a>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="form-group">
+    <input type="button" id="click-input" value="Choose file" onclick="document.getElementById('file').click();" name="files"/>
+    <label for="click-input" id="file-name" name="file-name">{{p.Productimage}}</label>
+    <input type="file" style="display:none;" id="file" name="file">
+    <input type="hidden" name="oldimg" value="{{p.Productimage}}">
+    <script>
+        inputElement = document.getElementById('file')
+        labelElement = document.getElementById('file-name')
+        inputElement.onchange = function(event) {
+            var path = inputElement.value;
+            if (path) {
+            labelElement.innerHTML = path.split(/(\\|\/)/g).pop()
+            }
+        }
+    </script>
+    </div> 
+    <br>
+    <input type="submit" value="Submit" class="btn text-light" style="background-color: rgba(26,148,255,255);"/>
+    {{ form_end(form) }}
+    <br>  
+</div>
+{% endblock %}

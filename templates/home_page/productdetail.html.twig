@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<section class="h-100 h-custom" style="background-color: #f7f7f7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              
+            <div class="col-lg-5 p-5">         
+                    <div class="image_selected ms-3"><img src="../img/{{product.Productimage}}" alt="" style="margin: auto;
+                width: 80%;"></div>
+                </div>
+                
+                <div class="col-lg-7 p-5">
+                    <div class="product_description">
+                        <div class="product_name">Product Name: {{product.Productname}}</div>
+                        
+                        <div> <span class="product_price"></span>Price: {{product.Price}} VND</div>
+                        
+                        <div><span class="product_info"><span>Decription: {{product.Productdes}}</div>                        
+                        <hr class="singleline">
+                        <div class="card-body align-self-center">
+                            <a href="{{ path('addcart', {'id' : product.id})}}" class="btn btn-primary">Add to Cart <i class="fa fa-shopping-cart" style="font-size:20px"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
