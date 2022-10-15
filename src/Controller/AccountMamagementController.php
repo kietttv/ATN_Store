@@ -21,7 +21,8 @@ class AccountMamagementController extends AbstractController
      */
     public function indexAction(UserRepository $repo): Response
     {
-        $account = $repo->allAccount("ROLE");
+        // $account = $repo->allAccount("ROLE");
+        $account = $repo->findAll();
 
         return $this->render('account_mamagement/index.html.twig', [
             'account' => $account
