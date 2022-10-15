@@ -104,10 +104,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
    {
        return $this->createQueryBuilder('u')
             ->select('count(u.username) as count')
-           ->andWhere('u.username = :userName')
-           ->setParameter('userName', $userName)
-           ->getQuery()
-           ->getResult()
+            ->andWhere('u.username = :userName')
+            ->setParameter('userName', $userName)
+            ->getQuery()
+            ->getResult()
        ;
    }
 
